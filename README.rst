@@ -44,11 +44,12 @@ lets say your project's tree is like so:
 
 .. code-block:: bash
 
-    .gitignore
-    src/
-    src/project/
-    src/project/file.py
-
+└───temp_project
+    │   .gitignore
+    │
+    └───src
+        └───project
+                file.py
 and you wish to create auto documentation of your project.
 
 simply use ``docme`` command - which is an entry point which directs to :func:``docme.cli.main`` function:
@@ -65,17 +66,22 @@ simply use ``docme`` command - which is an entry point which directs to :func:``
 
 .. code-block:: bash
 
-    .gitignore
-    doc/
-    doc/api_reference/
-    doc/api_reference/project/
-    doc/api_reference/project/file.rst
-    doc/api_reference/project/index.rst
-    doc/api_reference/index.rst
-    doc/index.rst
-    src/
-    src/project/
-    src/project/file.py
+└───temp_project
+    │   .gitignore
+    │
+    ├───doc
+    │   │   index.rst
+    │   │
+    │   └───api_reference
+    │       │   index.rst
+    │       │
+    │       └───project
+    │               file.rst
+    │               index.rst
+    │
+    └───src
+        └───project
+                file.py
 
 
 now you can simply add ``make`` file and ``conf.py`` for sphinx to compile the doc to html!
